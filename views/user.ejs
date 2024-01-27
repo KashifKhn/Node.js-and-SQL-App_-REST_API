@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ALL Users</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 5px;
+      }
+      th {
+        text-align: left;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      form {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <button>
+      <a href="/users">Back to all</a>
+    </button>
+    <br />
+    <br />
+    <h1>@ <%= user.name %></h1>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%=user.id %></td>
+            <td><%=user.name %></td>
+            <td><%=user.email %></td>
+            <td>
+              <button><a href="/users/"><-Back</a> |</button>
+              <button><a href="/users/<%= user.id %>/edit">Edit</a> |</button>
+              <button>
+                <a href="/users/<%= user.id %>/delete">Delete</a>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

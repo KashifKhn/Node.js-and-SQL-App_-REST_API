@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Page</title>
+    <style>
+      form {
+        width: 300px;
+        margin: 0 auto;
+      }
+
+      label {
+        display: block;
+        margin-top: 20px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      button[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: #ec0c0c;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #ec0c0c;
+      }
+
+      div {
+        text-align: center;
+      }
+
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button a {
+        text-decoration: none;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Delete User</h1>
+    <form method="post" action="/users/<%= id %>?_method=DELETE">
+      <label for="email">Email: </label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Enter your email"
+        required
+      />
+      <br />
+      <label for="passwor">Password</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Enter your password"
+        required
+      />
+      <br />
+      <button type="submit">Delete</button>
+      <button type="button">
+        <a href="/users">Cancel Delete</a>
+      </button>
+    </form>
+    <br />
+  </body>
+</html>
